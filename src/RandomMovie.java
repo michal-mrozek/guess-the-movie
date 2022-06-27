@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class RandomMovie {
     private final String FILE_NAME = "movies.txt";
-
-
     File file = new File(FILE_NAME);
 
     public String getRandomMovie() {
@@ -20,7 +18,7 @@ public class RandomMovie {
                 listOfMovies.add(scan.nextLine());
             }
             Random random = new Random();
-            int randomIndex = random.nextInt(listOfMovies.size()) + 1;
+            int randomIndex = random.nextInt(listOfMovies.size());
 
             return listOfMovies.get(randomIndex);
         } catch (FileNotFoundException e) {

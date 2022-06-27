@@ -1,7 +1,9 @@
 public class GuessGame {
     public static void main(String[] args) {
-        RandomMovie rm = new RandomMovie();
-        String randomMovie = rm.getRandomMovie();
-        System.out.println(randomMovie);
+
+        Guess guess = new Guess();
+        String gameResult = guess.guessing();
+        System.out.println(gameResult);
+
     }
 }
