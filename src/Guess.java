@@ -17,9 +17,7 @@ public class Guess {
         RandomMovie rm = new RandomMovie();
         Scanner scan = new Scanner(System.in);
         String randomMovie = rm.getRandomMovie();
-        System.out.println(randomMovie);
         String underscoredMovie = getUnderscoredMovie(randomMovie);
-        System.out.println(underscoredMovie);
         List<String> wrongLetters = new ArrayList<>() ;
         List<String> correctLetters = new ArrayList<>();
         int noWrongGuess = 10;
@@ -32,7 +30,6 @@ public class Guess {
             if (randomMovie.indexOf(letter) != -1){
                 correctLetters.add(letter);
                 underscoredMovie = randomMovie.replaceAll("[^" +toStringRegex(correctLetters) + " ]", "_");
-                System.out.println(toStringRegex(correctLetters));
 
                 if(underscoredMovie.equals(randomMovie)){
                     win = true;
@@ -48,9 +45,9 @@ public class Guess {
 
 
         if (win)
-            return "Congratulation! You won.";
+            return "Congratulation! You won. \n movie: " + randomMovie;
         else
-            return "sorry you lose!";
+            return "sorry you lose! \n movie: " + randomMovie;
     }
 
     private String toStringRegex(List<String> correctLetters) {
